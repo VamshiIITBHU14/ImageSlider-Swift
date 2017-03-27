@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="ImageSlider_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="autoPlayToggle" destination="iKB-Se-8QN" id="WBX-c9-yOi"/>
+                <outlet property="sampleImageView" destination="fk5-qT-9uG" id="ji0-ZS-Mv1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Play Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-j5-2aO">
+                    <rect key="frame" x="16" y="580.5" width="151" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="U2a-j5-2aO" secondAttribute="height" multiplier="155:21" id="W0P-fB-B3H"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-Se-8QN">
+                    <rect key="frame" x="198" y="575.5" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="4tR-GA-xVJ"/>
+                        <constraint firstAttribute="width" secondItem="iKB-Se-8QN" secondAttribute="height" multiplier="49:31" id="Izf-6Y-HPh"/>
+                    </constraints>
+                    <connections>
+                        <action selector="toggleAutoPlay:" destination="-1" eventType="valueChanged" id="VmX-WO-lXY"/>
+                    </connections>
+                </switch>
+                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black-Car-HD-Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fk5-qT-9uG">
+                    <rect key="frame" x="279" y="565.5" width="80" height="50.5"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fk5-qT-9uG" secondAttribute="height" multiplier="19:12" id="2UY-hm-Glp"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="eGn-rP-mWE" appends="YES" id="APR-2j-jAM"/>
+                    </connections>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="iKB-Se-8QN" firstAttribute="leading" secondItem="U2a-j5-2aO" secondAttribute="trailing" constant="31" id="C6v-Kh-5ri"/>
+                <constraint firstItem="fk5-qT-9uG" firstAttribute="leading" secondItem="iKB-Se-8QN" secondAttribute="trailing" constant="32" id="M4j-vL-skA"/>
+                <constraint firstItem="fk5-qT-9uG" firstAttribute="centerY" secondItem="U2a-j5-2aO" secondAttribute="centerY" id="NNu-nK-dfo"/>
+                <constraint firstItem="U2a-j5-2aO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Uus-OA-kfR"/>
+                <constraint firstAttribute="bottom" secondItem="U2a-j5-2aO" secondAttribute="bottom" multiplier="1.11" id="Zbm-tR-ab5"/>
+                <constraint firstAttribute="bottom" secondItem="fk5-qT-9uG" secondAttribute="bottom" constant="51" id="lnF-2V-aLs"/>
+                <constraint firstAttribute="trailing" secondItem="fk5-qT-9uG" secondAttribute="trailing" constant="16" id="ngt-d4-a6y"/>
+                <constraint firstItem="fk5-qT-9uG" firstAttribute="centerY" secondItem="iKB-Se-8QN" secondAttribute="centerY" id="tuC-GN-Pgx"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="eGn-rP-mWE" appends="YES" id="w3N-8C-UsG"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="eGn-rP-mWE">
+            <connections>
+                <action selector="tappedOnSampleImage:" destination="-1" id="hYa-3I-M4t"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="Black-Car-HD-Wallpaper.jpg" width="1920" height="1200"/>
+    </resources>
+</document>
